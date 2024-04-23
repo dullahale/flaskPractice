@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
+{% block content %}
 
-<head>
-    {% if title %}
-        <title>Community Blog - {{ title }} </title>
-    {% else %}
-        <title>Community Blog</title>
-    {% endif %}
-</head>
-
-<body>
     {% for post in posts %}
         <h1>{{post.title}}</h1>
         <p>By {{ post.author }} on {{ post.date_posted}}</p>
         <p>{{ post.content }}</p>
     {% endfor %}
-</body>
 
-</html>
+{% endblock content %}

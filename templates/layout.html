@@ -1,0 +1,17 @@
+<!-- This is a parent template that the other templates (pages) will inherit from. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% if title %}
+        <title>Community Blog - {{ title }} </title>
+    {% else %}
+        <title>Community Blog</title>
+    {% endif %}
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>
