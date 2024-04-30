@@ -11,17 +11,24 @@ posts = [
     },
 
      {
-        'author': 'Chase Corey',
+        'author': 'Victor Towobawa',
         'title': 'Second Blog Post',
         'content': 'Second post content',
         'date_posted': 'April 23, 2024',
     },
 
     {
-        'author': 'Mike Blake',
+        'author': 'Osama Abdullah',
         'title': 'Third Blog Post',
         'content': 'Third post content',
-        'date_posted': 'April 20, 2024',
+        'date_posted': 'April 26, 2024',
+    },
+
+    {
+        'author': 'Osaze Dieseal',
+        'title': 'Fourth Blog Post',
+        'content': 'Fourth post content',
+        'date_posted': 'April 30, 2024',
     },
 ]
 
