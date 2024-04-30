@@ -1,10 +1,10 @@
 # This is a form for when users want to register or login into the site 
 
-from flask_wtf import Flaskform
+from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, Email, EqualTo
 
-class RegistrationForm(Flaskform):
+class RegistrationForm(FlaskForm):
 
     first_name = StringField("First Name", 
                              validators=[DataRequired(), Length(min=2, max=20)])
@@ -23,7 +23,7 @@ class RegistrationForm(Flaskform):
 
     submit = SubmitField("Register")
 
-class LoginForm(Flaskform):
+class LoginForm(FlaskForm):
      
     username = StringField("Username", 
                              validators=[DataRequired(), Length(min=2, max=20)])
