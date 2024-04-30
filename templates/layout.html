@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='main.css')}}">
 
     {% if title %}
-    <title>Community Blog - {{ title }} </title>
+    <title>GYM Community Blog - {{ title }} </title>
     {% else %}
     <title>Community Blog</title>
     {% endif %}
@@ -46,13 +46,13 @@
         <div class="row">
             <div class="col-md-8">
                 {% with messages = get_flashed_messages(with_categories=true)%}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                        <div class="alert alert-{{category}}">
-                            {{message}}
-                        </div>
-                        {% endfor %}
-                    {% endif %}
+                {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{category}}">
+                    {{message}}
+                </div>
+                {% endfor %}
+                {% endif %}
                 {% endwith %}
                 {% block content %}{% endblock %}
             </div>
