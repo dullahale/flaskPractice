@@ -61,18 +61,18 @@
                 {% endif %}
             </div>
 
-            <div class="form-check">
-                {{ form.remember(class="form-check-input ")}}
-                {{ form.remember.label(class="form-check-label ")}}
+            <div class="form-check mb-3">
+                {{ form.remember_user(class="form-check-input ")}}
+                {{ form.remember_user.label(class="form-check-label ")}}
             </div>
 
-           
 
-        </fieldset>
-        <div class="form-group">
+
+        </fieldset class="mb-4">
+        <div class="form-group mb-3">
             {{ form.submit(class="btn btn-outline-info mt-3")}}
         </div>
-        <small class="text-muted ml-4">
+        <small class="text-muted ml-4 mb-3">
             <a href="#">Forgot Password</a>
         </small>
     </form>
