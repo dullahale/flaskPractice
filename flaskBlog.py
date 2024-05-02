@@ -49,8 +49,12 @@ def about():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
+        print("Form validation successful!")  # Add this for debugging
         flash(f'Account Created for {form.username.data}!', 'success')
         return redirect(url_for('home'))
+    else:
+        # If form validation fails, print out the validation errors to identify the issue
+        print(form.errors)
     return render_template("register.html", title="Register", form=form)
 
 @app.route("/login")
