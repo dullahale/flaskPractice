@@ -1,6 +1,6 @@
 # A file to hold our database modules
 
-from flaskBlog import db
+from flaskblog import db
 from datetime import datetime
 
 # Creating a table with columns and rows the contain user information 
