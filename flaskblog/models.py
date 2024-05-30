@@ -6,6 +6,8 @@ from datetime import datetime
 # Creating a table with columns and rows the contain user information 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
+    first_name = db.Column(db.String(20), nullable=True)
+    last_name = db.Column(db.String(20), nullable=True)
     username = db.Column(db.String(20), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default= "default.jpg")

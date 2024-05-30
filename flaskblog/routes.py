@@ -1,6 +1,8 @@
 from flask import render_template, url_for, flash, redirect
-from flaskblog import app
+from flaskblog import app,db,bcrypt
 from flaskblog.forms import RegistrationForm, LoginForm
+from flaskblog.models import User, Post
+
 
 posts = [
     {
@@ -46,9 +48,13 @@ def about():
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
-        print("Form validation successful!")  # Add this for debugging
-        flash(f'Account Created for {form.username.data}!', 'success')
-        return redirect(url_for('home'))
+        hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user = User(first_name = form.first_name.data, last_name = form.last_name.data, 
+                    username = form.username.data, email = form.email.data, password = hashed_password)
+        db.session.add(user)
+        db.session.commit()
+        flash('Your account has been successfully created! You are now able to login', 'success')
+        return redirect(url_for('login'))
     else:
         # If form validation fails, print out the validation errors to identify the issue
         print(form.errors)
