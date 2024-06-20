@@ -1,10 +1,16 @@
 # A file to hold our database modules
 
-from flaskblog import db
+from flaskblog import db, login_manager
+from flask_login import UserMixin
 from datetime import datetime
 
+@login_manager.user_loader
+# This function takes a user ID as an argument
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
 # Creating a table with columns and rows the contain user information 
-class User(db.Model):
+class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
     first_name = db.Column(db.String(20), nullable=True)
     last_name = db.Column(db.String(20), nullable=True)
